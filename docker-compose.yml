@@ -1,0 +1,7 @@
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/openresty/Dockerfile
+    ports:
+      - '80:80'

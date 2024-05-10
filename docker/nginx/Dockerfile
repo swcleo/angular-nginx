@@ -2,7 +2,11 @@ FROM nginx
 
 COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY docker/nginx/default.conf /etc/nginx/conf.d
-COPY dist/example/browser /usr/share/nginx/example
+
+COPY docker/nginx/ssl/nginx.crt /etc/nginx/ssl/
+COPY docker/nginx/ssl/nginx.key /etc/nginx/ssl/
+
+COPY dist/example/browser /usr/share/nginx/www
 
 EXPOSE 80
 
